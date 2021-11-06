@@ -11,8 +11,7 @@ router.get("/choose/sortby/:sorter", (req, res) => {
     .find({})
     .sort(sorter)
     .exec((err, doc) => {
-      console.log(doc);
+      res.render("choosePlayerForUpdate", { players: doc });
     });
-  res.render("choosePlayerForUpdate");
 });
 module.exports = router;

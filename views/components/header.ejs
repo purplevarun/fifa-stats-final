@@ -22,7 +22,20 @@
       <a class="navbar-brand" href="/">Fifa Stats</a>
       <!-- if (showDropdown==true) then show it-->
       <div id="rightDropdownToggle">
-        <% if(showDropdown==true) {%> <%- include ('./headerDropdown.ejs') %>
+        <% if(showDropdown==true) {%>
+        <!--  -->
+        <% if (dropdownFor == 'update'){ %>
+        <!--  -->
+        <%-include ('./headerDropdownForUpdate.ejs')%>
+        <!--  -->
+        <% } %>
+        <!--  -->
+        <% if (dropdownFor == 'details') {%>
+        <!--  -->
+        <%- include ('./headerDropdownForDetails.ejs')%>
+        <!--  -->
+        <% } %>
+        <!--  -->
         <%} %>
       </div>
     </div>

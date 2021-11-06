@@ -17,9 +17,14 @@ router.get("/choose/sortby/:sorter", (req, res) => {
 });
 router.get("/:playerid", (req, res) => {
   const playerid = req.params.playerid;
-  playerTotal.findById(playerid).exec((err, docs) => {
+  playerTotal.findById(playerid, (err, docs) => {
     if (err) throw err;
-    res.render("updateThisPlayer", { playerData: docs });
+    res.render("updateThisPlayer", { data: docs });
   });
+});
+router.post("/:playerid", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  res.send("hi");
 });
 module.exports = router;

@@ -13,9 +13,24 @@
     <link rel="stylesheet" href="bootstrap.min.css" />
     <link rel="stylesheet" href="common.css" />
   </head>
+  <script>
+    const playerAddedStatus = "<%-playerAdded.status%>";
+    const playerAddedname = "<%-playerAdded.name%>";
+    console.log(playerAddedStatus, playerAddedname);
+    if (playerAddedStatus === "true") {
+      setTimeout(() => {
+        document.getElementById("alertMsg").style.display = "none";
+      }, 2000);
+    }
+  </script>
   <body>
     <%- include('./components/header.ejs', {showDropdown:false}) %>
     <div class="mainBody">
+      <% if (playerAdded.status==true) {%>
+      <div class="alert alert-success" role="alert" id="alertMsg">
+        <%= playerAdded.name %> was added
+      </div>
+      <% } %>
       <div class="gap"></div>
       <form method="post" action="/add/player">
         <div class="form-group">

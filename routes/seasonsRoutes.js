@@ -32,7 +32,10 @@ router.get("/:seasonNumber/sortby/:sorter", (req, res) => {
     .sort(sorter)
     .exec((err, docs) => {
       if (err) throw err;
-      res.render("playersThisSeason", { players: docs });
+      res.render("playersThisSeason", {
+        players: docs,
+        seasonNumber: req.params.seasonNumber,
+      });
     });
 });
 module.exports = router;

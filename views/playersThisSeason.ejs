@@ -15,7 +15,8 @@
   </head>
   <body>
     <%- include('./components/header.ejs',
-    {showDropdown:true,dropdownFor:'seasonDetails'}) %>
+    {showDropdown:true,dropdownFor:'seasonDetails', seasonNumber:seasonNumber})
+    %>
     <div class="mainBody">
       <% players.forEach(player => {%>
       <!--  -->

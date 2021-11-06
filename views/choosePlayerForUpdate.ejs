@@ -21,7 +21,10 @@
   <body>
     <%- include('./components/header.ejs', {showDropdown:true,
     dropdownFor:'update'}) %>
+
     <div class="mainBody">
+      <h2>Choose Player to Update</h2>
+      <div class="gap"></div>
       <% players.forEach(player => {%>
       <!--  -->
       <a href="/update/<%=player._id%>">

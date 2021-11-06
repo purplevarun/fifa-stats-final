@@ -6,12 +6,16 @@
 <div class="player">
   <div class="card">
     <div class="card-body">
-      <p><%= player.name %></p>
+      <strong>
+        <p style="font-size: larger"><%= player.name %></p>
+      </strong>
       <p>
         <!--  -->
         Games [<%= player.games %>]
         <!--  -->
         Rating [<%= player.rating %>]
+        <!--  -->
+        Contributions [<%= player.contributions %>]
       </p>
       <p>
         <!--  -->
@@ -19,7 +23,7 @@
         <!--  -->
         Assists [<%= player.assists %>]
         <!--  -->
-        Contributions [<%= player.contributions %>]
+        Hattricks [<%= player.hattricks %>]
         <!--  -->
       </p>
       <!--  -->
@@ -29,7 +33,7 @@
         <!--  -->
         C/G [<%= player.contributionsPerGame %>]
         <!--  -->
-        Hattricks [<%= player.hattricks %>]
+        Clean Sheets [<%= player.cleanSheets %>]
       </p>
     </div>
   </div>

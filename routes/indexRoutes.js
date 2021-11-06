@@ -9,10 +9,15 @@ var playerAdded = {
   name: null,
 };
 //
-router.get("/seasonal/stats/:playerid", (req, res) => {
-  playerSeason.find({ refId: req.params.playerid }, (err, docs) => {
-    res.render("seasonalStats", { docs: docs });
-  });
+router.get("/seasonal/stats/:playerid/sortby/:sorter", (req, res) => {
+  const sorter = {};
+  sorter[req.params.sorter] = "desc";
+  playerSeason
+    .find({ refId: req.params.playerid })
+    .sort(sorter)
+    .exec((err, docs) => {
+      res.render("seasonalStats", { docs: docs });
+    });
 });
 router.get("/details/:playerid", (req, res) => {
   const playerid = req.params.playerid;

@@ -17,32 +17,35 @@
     <%- include('./components/header.ejs', {showDropdown:false}) %>
     <div class="mainBody">
       <div class="gap"></div>
-      <form>
+      <form method="post" action="/add/player">
         <div class="form-group">
           <input
             type="text"
             class="form-control"
-            placeholder="Enter Name of Player whose first name is kubo"
+            placeholder="Name of Player"
             name="name"
+            required
+            style="max-width: 400px; margin: 0 auto; margin-bottom: 30px"
+          />
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Age of Player"
+            name="age"
+            required
             style="max-width: 400px; margin: 0 auto; margin-bottom: 30px"
           />
           <input
             type="text"
             class="form-control"
-            placeholder="Enter Name of Player whose first name is kubo"
-            name="name"
-            style="max-width: 400px; margin: 0 auto; margin-bottom: 30px"
-          />
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Enter Name of Player whose first name is kubo"
-            name="name"
+            placeholder="Primary Position"
+            name="pos"
+            required
             style="max-width: 400px; margin: 0 auto; margin-bottom: 30px"
           />
         </div>
         <br />
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" type="submit">Add Player</button>
       </form>
     </div>
   </body>

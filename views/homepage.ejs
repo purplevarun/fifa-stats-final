@@ -12,11 +12,35 @@
     ></script>
     <link rel="stylesheet" href="bootstrap.min.css" />
     <link rel="stylesheet" href="common.css" />
+    <style>
+      .btnBox {
+        display: flex;
+        flex-direction: column;
+      }
+      .mainScreenBtns {
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+      }
+    </style>
   </head>
   <body>
     <%- include('./components/header.ejs', {showDropdown:false}) %>
     <div class="mainBody">
-      <p>harro</p>
+      <div class="btnBox">
+        <div class="mainScreenBtns">
+          <button class="btn btn-lg btn-success">List All Players</button>
+        </div>
+        <div class="mainScreenBtns">
+          <button class="btn btn-lg btn-danger">List All Seasons</button>
+        </div>
+        <div class="mainScreenBtns">
+          <button class="btn btn-lg btn-primary">Update Existing Player</button>
+        </div>
+        <div class="mainScreenBtns">
+          <button class="btn btn-lg btn-warning">Add New Player</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

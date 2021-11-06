@@ -26,6 +26,8 @@
   <body>
     <%- include('./components/header.ejs', {showDropdown:false}) %>
     <div class="mainBody">
+      <h1>Add New Player</h1>
+      <div class="gap"></div>
       <% if (playerAdded.status==true) {%>
       <div class="alert alert-success" role="alert" id="alertMsg">
         <%= playerAdded.name %> was added

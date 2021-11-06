@@ -13,12 +13,20 @@
     <link rel="stylesheet" href="../../../bootstrap.min.css" />
     <link rel="stylesheet" href="../../../common.css" />
   </head>
-
+  <style>
+    a {
+      text-decoration: none;
+    }
+  </style>
   <body>
     <%- include('./components/header.ejs', {showDropdown:true,
     dropdownFor:'update'}) %>
     <div class="mainBody">
       <% players.forEach(player => {%>
+      <!--  -->
+      <a href="/update/<%=player._id%>">
+        <%- include ('./components/playertab.ejs', {player:player}) %>
+      </a>
       <!--  -->
       <%}) %>
     </div>

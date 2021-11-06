@@ -17,6 +17,12 @@ mongoose.connect(mongourl, (err) => {
 });
 // routes
 app.use("/", require("./routes/index"));
+app.get("/error", (req, res) => {
+  res.render("components/error404");
+});
+app.get("*", (req, res) => {
+  res.redirect("/error");
+});
 // server initiation
 app.listen(port, (err) => {
   if (err) throw err;

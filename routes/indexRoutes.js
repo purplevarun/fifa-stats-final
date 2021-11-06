@@ -8,6 +8,12 @@ var playerAdded = {
   name: null,
 };
 //
+router.get("/details/:playerid", (req, res) => {
+  const playerid = req.params.playerid;
+  playerTotal.findById(playerid, (err, docs) => {
+    res.render("detailsOfThisPlayer", { player: docs });
+  });
+});
 router.get("/players/sortby/:sorter", (req, res) => {
   const sorter = {};
   sorter[req.params.sorter] = "desc";

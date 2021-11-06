@@ -17,6 +17,9 @@
     <%- include('./components/header.ejs', {showDropdown:true,
     dropdownFor:'totalDetails'}) %>
     <div class="mainBody">
+      <div class="gap"></div>
+      <h2>List of All Players</h2>
+      <div class="gap"></div>
       <% players.forEach(player => {%>
       <!--  -->
       <a href="/details/<%=player._id%>">

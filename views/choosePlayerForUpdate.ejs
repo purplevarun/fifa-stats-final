@@ -18,12 +18,28 @@
       text-decoration: none;
     }
   </style>
+  <script>
+    const playerUpdatedstatus = "<%-playerUpdated.status%>";
+    const playerUpdatedsame = "<%-playerUpdated.name%>";
+    console.log(playerUpdatedstatus, playerUpdatedsame);
+    if (playerUpdatedstatus === "true") {
+      setTimeout(() => {
+        document.getElementById("alertMsg").style.display = "none";
+      }, 2000);
+    }
+  </script>
   <body>
     <%- include('./components/header.ejs', {showDropdown:true,
     dropdownFor:'update'}) %>
 
     <div class="mainBody">
       <h2>Choose Player to Update</h2>
+      <div class="gap"></div>
+      <% if (playerUpdated.status==true) {%>
+      <div class="alert alert-success" role="alert" id="alertMsg">
+        <%= playerUpdated.name %> was updated
+      </div>
+      <% } %>
       <div class="gap"></div>
       <% players.forEach(player => {%>
       <!--  -->

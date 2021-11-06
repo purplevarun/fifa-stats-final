@@ -18,7 +18,7 @@
     <div class="mainBody">
       <h2>Update <%= data.name %></h2>
       <div class="gap"></div>
-      <form action="/update/<%=data._id%>" method="post">
+      <form action="/update/<%=data.name%>/<%=data._id%>" method="post">
         <div class="form-group">
           <input
             type="text"
@@ -84,7 +84,7 @@
 
         <div class="form-group">
           <input
-            type="number"
+            type="text"
             class="form-control"
             placeholder="Rating"
             name="rating"

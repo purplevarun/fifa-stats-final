@@ -32,29 +32,31 @@
           <div class="left">Position</div>
           <div class="right"><%= player.position %></div>
         </div>
+        <!-- dropdown for all seasons -->
         <div class="be">
           <div class="left">Name</div>
           <div class="right"><%= player.name %></div>
         </div>
+        <!-- end of dropdown -->
         <div class="be">
-          <div class="left">Name</div>
-          <div class="right"><%= player.name %></div>
+          <div class="left">Games</div>
+          <div class="right"><%= player.games %></div>
         </div>
         <div class="be">
-          <div class="left">Name</div>
-          <div class="right"><%= player.name %></div>
+          <div class="left">Rating</div>
+          <div class="right"><%= player.rating %></div>
         </div>
         <div class="be">
-          <div class="left">Name</div>
-          <div class="right"><%= player.name %></div>
+          <div class="left">Goals</div>
+          <div class="right"><%= player.goals %></div>
         </div>
         <div class="be">
-          <div class="left">Name</div>
-          <div class="right"><%= player.name %></div>
+          <div class="left">Assists</div>
+          <div class="right"><%= player.assists %></div>
         </div>
         <div class="be">
-          <div class="left">Name</div>
-          <div class="right"><%= player.name %></div>
+          <div class="left">Contributions</div>
+          <div class="right"><%= player.contributions %></div>
         </div>
         <div class="be">
           <div class="left">Name</div>
@@ -75,13 +77,21 @@
     .playerBox {
       display: flex;
       flex-direction: column;
-      margin: 0 10px;
     }
     .be {
+      border: 2px solid transparent;
+      border-radius: 9px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
+      padding: 10px 2px;
+    }
+    .be:hover {
+      border: 2px solid white;
+    }
+    .be::selection {
+      border: 2px solid white;
     }
     .right {
       font-weight: bolder;

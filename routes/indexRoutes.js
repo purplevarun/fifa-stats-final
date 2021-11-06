@@ -1,7 +1,7 @@
 //
 const express = require("express");
 const router = express.Router();
-const playerTotal = require("./../models/playerTotal");
+const playerTotal = require("../models/playerTotal");
 //
 var playerAdded = {
   status: false,

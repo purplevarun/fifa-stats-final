@@ -16,7 +16,8 @@ mongoose.connect(mongourl, (err) => {
   console.log("connected to cloud database");
 });
 // routes
-app.use("/", require("./routes/index"));
+app.use("/", require("./routes/indexRoutes"));
+app.use("/update", require("./routes/updateRoutes"));
 app.get("/error", (req, res) => {
   res.render("components/error404");
 });

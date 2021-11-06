@@ -24,4 +24,15 @@ router.get("/choose", (req, res) => {
     res.render("seasonList", { numSeasons: maxSeason });
   });
 });
+router.get("/:seasonNumber/sortby/:sorter", (req, res) => {
+  const sorter = {};
+  sorter[req.params.sorter] = "desc";
+  playerSeason
+    .find({ season: req.params.seasonNumber })
+    .sort(sorter)
+    .exec((err, docs) => {
+      if (err) throw err;
+      res.render("playersThisSeason", { players: docs });
+    });
+});
 module.exports = router;

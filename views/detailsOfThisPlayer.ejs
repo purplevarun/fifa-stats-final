@@ -15,6 +15,30 @@
   </head>
   <body>
     <%- include('./components/header.ejs', {showDropdown:false}) %>
-    <div class="mainBody"></div>
+    <div class="mainBody">
+      <h4>Complete Details for <%= player.name %></h4>
+      <div class="gap"></div>
+      <!-- be = boxElement -->
+      <div class="playerBox">
+        <div class="be">
+          <div class="left">Name</div>
+          <div class="right"><%= player.name %></div>
+        </div>
+      </div>
+    </div>
   </body>
+  <style>
+    .playerBox {
+      display: flex;
+      flex-direction: column;
+    }
+    .be {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .right {
+      font-weight: bolder;
+    }
+  </style>
 </html>

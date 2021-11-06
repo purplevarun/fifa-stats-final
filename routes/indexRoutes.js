@@ -2,12 +2,18 @@
 const express = require("express");
 const router = express.Router();
 const playerTotal = require("../models/playerTotal");
+const playerSeason = require("../models/playerSeason");
 //
 var playerAdded = {
   status: false,
   name: null,
 };
 //
+router.get("/seasonal/stats/:playerid", (req, res) => {
+  playerSeason.find({ refId: req.params.playerid }, (err, docs) => {
+    res.render("seasonalStats", { docs: docs });
+  });
+});
 router.get("/details/:playerid", (req, res) => {
   const playerid = req.params.playerid;
   playerTotal.findById(playerid, (err, docs) => {

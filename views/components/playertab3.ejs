@@ -1,0 +1,40 @@
+<style>
+  .player {
+    margin-top: 20px;
+  }
+</style>
+<div class="player">
+  <div class="card">
+    <div class="card-body">
+      <strong>
+        <p style="font-size: larger">Season <%= player.season %></p>
+      </strong>
+      <p>
+        <!--  -->
+        Games [<%= player.games %>]
+        <!--  -->
+        Rating [<%= player.rating %>]
+        <!--  -->
+        Contributions [<%= player.contributions %>]
+      </p>
+      <p>
+        <!--  -->
+        Goals [<%= player.goals %>]
+        <!--  -->
+        Assists [<%= player.assists %>]
+        <!--  -->
+        Hattricks [<%= player.hattricks %>]
+        <!--  -->
+      </p>
+      <!--  -->
+      <p>
+        <!--  -->
+        G/G [<%= player.goalsPerGame %>]
+        <!--  -->
+        C/G [<%= player.contributionsPerGame %>]
+        <!--  -->
+        Clean Sheets [<%= player.cleanSheets %>]
+      </p>
+    </div>
+  </div>
+</div>

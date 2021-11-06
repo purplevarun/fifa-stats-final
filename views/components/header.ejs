@@ -1,8 +1,15 @@
+<style>
+  #rightDropdownToggle {
+    margin-right: 0px;
+  }
+</style>
 <script>
   window.onload = () => {
-    document.getElementById("rightDropdownToggle").onclick = () => {
-      document.getElementById("rightDropdownToggle").style.marginRight =
-        "100px";
+    const dropdown = document.getElementById("rightDropdownToggle");
+    dropdown.onclick = () => {
+      if (dropdown.style.marginRight == "100px")
+        dropdown.style.marginRight = "0px";
+      else dropdown.style.marginRight = "100px";
     };
   };
 </script>

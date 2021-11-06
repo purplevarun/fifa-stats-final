@@ -32,12 +32,19 @@
           <div class="left">Position</div>
           <div class="right"><%= player.position %></div>
         </div>
-        <!-- dropdown for all seasons -->
-        <div class="be">
+        <!-- onclick for all seasons -->
+        <div
+          class="be bebe"
+          onclick="location.assign('/seasonal/stats/<%=player._id%>')"
+        >
           <div class="left">Seasons</div>
           <div class="right"><%= player.seasons %></div>
         </div>
-        <!-- end of dropdown -->
+        <!-- end of onclick -->
+        <div class="be">
+          <div class="left">Jersey Number History</div>
+          <div class="right"><%= player.shirtNumber %></div>
+        </div>
         <div class="be">
           <div class="left">Games</div>
           <div class="right"><%= player.games %></div>
@@ -58,17 +65,22 @@
           <div class="left">Contributions</div>
           <div class="right"><%= player.contributions %></div>
         </div>
+
         <div class="be">
-          <div class="left">Name</div>
-          <div class="right"><%= player.name %></div>
+          <div class="left">Contributions Per Game</div>
+          <div class="right"><%= player.contributionsPerGame %></div>
         </div>
         <div class="be">
-          <div class="left">Name</div>
-          <div class="right"><%= player.name %></div>
+          <div class="left">Goals Per Game</div>
+          <div class="right"><%= player.goalsPerGame %></div>
         </div>
         <div class="be">
-          <div class="left">Name</div>
-          <div class="right"><%= player.name %></div>
+          <div class="left">Hattricks</div>
+          <div class="right"><%= player.hattricks %></div>
+        </div>
+        <div class="be">
+          <div class="left">Clean Sheets</div>
+          <div class="right"><%= player.cleanSheets %></div>
         </div>
       </div>
     </div>
@@ -89,12 +101,16 @@
     }
     .be:hover {
       border: 2px solid white;
+      cursor: pointer;
     }
     .be::selection {
       border: 2px solid white;
     }
     .right {
       font-weight: bolder;
+    }
+    .bebe:hover {
+      border: 2px solid gold;
     }
   </style>
 </html>

@@ -18,6 +18,7 @@ mongoose.connect(mongourl, (err) => {
 // routes
 app.use("/", require("./routes/indexRoutes"));
 app.use("/update", require("./routes/updateRoutes"));
+app.use("/seasons", require("./routes/seasonsRoutes"));
 app.get("/error", (req, res) => {
   res.render("components/error404");
 });

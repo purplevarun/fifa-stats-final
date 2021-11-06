@@ -13,16 +13,16 @@
     };
   };
 </script>
-<div class="header">
+<div class="header" style="position: fixed; width: 100%">
   <nav
     class="navbar navbar-expand-lg navbar-dark bg-dark"
     style="position: fixed; width: 100%"
   >
     <div class="container-fluid">
       <a class="navbar-brand" href="/">Fifa Stats</a>
-      <!-- if (showDropdown==true) the show it-->
+      <!-- if (showDropdown==true) then show it-->
       <div id="rightDropdownToggle">
-        <% if(showDropdown===true) {%> <%- include ('./headerDropdown.ejs') %>
+        <% if(showDropdown==true) {%> <%- include ('./headerDropdown.ejs') %>
         <%} %>
       </div>
     </div>

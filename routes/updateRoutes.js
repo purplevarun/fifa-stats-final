@@ -11,7 +11,15 @@ router.get("/choose/sortby/:sorter", (req, res) => {
     .find({})
     .sort(sorter)
     .exec((err, doc) => {
+      if (err) throw err;
       res.render("choosePlayerForUpdate", { players: doc });
     });
+});
+router.get("/:playerid", (req, res) => {
+  const playerid = req.params.playerid;
+  playerTotal.findById(playerid).exec((err, docs) => {
+    if (err) throw err;
+    res.render("updateThisPlayer", { playerData: docs });
+  });
 });
 module.exports = router;

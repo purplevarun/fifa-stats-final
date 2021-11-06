@@ -1,3 +1,11 @@
+<script>
+  window.onload = () => {
+    document.getElementById("rightDropdownToggle").onclick = () => {
+      document.getElementById("rightDropdownToggle").style.marginRight =
+        "100px";
+    };
+  };
+</script>
 <div class="header">
   <nav
     class="navbar navbar-expand-lg navbar-dark bg-dark"
@@ -6,7 +14,10 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/">Fifa Stats</a>
       <!-- if (showDropdown==true) the show it-->
-      <% if(showDropdown) {%> <% include ('./headerDropdown.ejs') %> <% } %>
+      <div id="rightDropdownToggle">
+        <% if(showDropdown===true) {%> <%- include ('./headerDropdown.ejs') %>
+        <%} %>
+      </div>
     </div>
   </nav>
 </div>

@@ -10,13 +10,13 @@
       <p><%= player.initialAge %> <%= player.position %></p>
       <% if (player.status === "retired"){ %>
       <!--  -->
-      <p><button class="btn btn-sm btn-danger">Retired</button></p>
+      <p><button class="btn btn-sm btn-warning">Retired</button></p>
       <!--  -->
       <% } %>
       <!--  -->
       <% if (player.status === "sold"){ %>
       <!--  -->
-      <p><button class="btn btn-sm btn-warning">Sold</button></p>
+      <p><button class="btn btn-sm btn-danger">Sold</button></p>
       <!--  -->
       <% } %>
     </div>

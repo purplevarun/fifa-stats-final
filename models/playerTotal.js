@@ -15,6 +15,7 @@ const playerTotalSchema = mongoose.Schema(
     hattricks: { type: Number, default: 0 },
     rating: { type: Number, default: 0 },
     shirtNumber: { type: Array, default: [] },
+    status: { type: String, default: "active" },
   },
   { timestamps: true }
 );

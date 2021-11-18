@@ -9,6 +9,31 @@ var playerAdded = {
   name: null,
 };
 //
+router.post("/changestatus/:id", (req, res) => {
+  const id = req.params.id;
+  const newStatus = req.body.status;
+  playerTotal.findByIdAndUpdate(id, { status: newStatus }, (err, docs) => {
+    if (err) throw err;
+    console.log(docs);
+  });
+  res.redirect("/");
+});
+router.get("/changeStatusOf/:id", (req, res) => {
+  const id = req.params.id;
+  playerTotal.findById(id, (err, docs) => {
+    res.render("changeThisPlayerStatus", { player: docs });
+  });
+});
+router.get("/changeStatus", (req, res) => {
+  const sorter = {};
+  sorter["initialAge"] = "desc";
+  playerTotal
+    .find({})
+    .sort(sorter)
+    .exec((err, docs) => {
+      res.render("changePlayerStatus", { docs: docs });
+    });
+});
 router.get("/seasonal/stats/:playerid/sortby/:sorter", (req, res) => {
   const sorter = {};
   sorter[req.params.sorter] = "desc";

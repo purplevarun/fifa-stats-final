@@ -8,6 +8,17 @@
     <div class="card-body">
       <p><%= player.name %></p>
       <p><%= player.initialAge %> <%= player.position %></p>
+      <% if (player.status === "retired"){ %>
+      <!--  -->
+      <p><button class="btn btn-sm btn-danger">Retired</button></p>
+      <!--  -->
+      <% } %>
+      <!--  -->
+      <% if (player.status === "sold"){ %>
+      <!--  -->
+      <p><button class="btn btn-sm btn-warning">Sold</button></p>
+      <!--  -->
+      <% } %>
     </div>
   </div>
 </div>

@@ -12,11 +12,16 @@ var playerAdded = {
 router.post("/changestatus/:id", (req, res) => {
   const id = req.params.id;
   const newStatus = req.body.status;
-  playerTotal.findByIdAndUpdate(id, { status: newStatus }, (err, docs) => {
-    if (err) throw err;
-    console.log(docs);
-  });
-  res.redirect("/");
+  const password = req.body.passcode;
+  if (password == "vk") {
+    playerTotal.findByIdAndUpdate(id, { status: newStatus }, (err, docs) => {
+      if (err) throw err;
+      console.log(docs);
+    });
+    res.redirect("/");
+  } else {
+    res.render("password-incorrect");
+  }
 });
 router.get("/changeStatusOf/:id", (req, res) => {
   const id = req.params.id;

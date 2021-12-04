@@ -31,16 +31,25 @@
 
       <form action="/changestatus/<%=player._id%>" method="post">
         <input type="text" value="active" name="status" hidden />
+        <input type="text" name="passcode" required placeholder="password" />
+        <br />
+        <br />
         <button class="btn btn-success btn-lg">Active</button>
       </form>
       <br />
       <form action="/changestatus/<%=player._id%>" method="post">
         <input type="text" value="retired" name="status" hidden />
+        <input type="text" name="passcode" required placeholder="password" />
+        <br />
+        <br />
         <button class="btn btn-warning btn-lg">Retired</button>
       </form>
       <br />
       <form action="/changestatus/<%=player._id%>" method="post">
         <input type="text" name="status" value="sold" hidden />
+        <input type="text" name="passcode" required placeholder="password" />
+        <br />
+        <br />
         <button class="btn btn-danger btn-lg">Sold</button>
       </form>
     </div>

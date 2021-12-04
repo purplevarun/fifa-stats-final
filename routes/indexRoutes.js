@@ -13,7 +13,7 @@ router.post("/changestatus/:id", (req, res) => {
   const id = req.params.id;
   const newStatus = req.body.status;
   const password = req.body.passcode;
-  if (password == "vk") {
+  if (password === "vk") {
     playerTotal.findByIdAndUpdate(id, { status: newStatus }, (err, docs) => {
       if (err) throw err;
       console.log(docs);
@@ -72,18 +72,23 @@ router.get("/add", (req, res) => {
 });
 router.post("/add/player", (req, res) => {
   const data = req.body;
-  const newPlayer = new playerTotal({
-    name: data.name,
-    initialAge: data.age,
-    position: data.pos,
-  });
-  newPlayer.save((err, doc) => {
-    if (err) throw err;
-    console.log(doc);
-  });
-  playerAdded.status = true;
-  playerAdded.name = data.name;
-  res.redirect("/add");
+  const passcode = data.passcode;
+  if (passcode === "vk") {
+    const newPlayer = new playerTotal({
+      name: data.name,
+      initialAge: data.age,
+      position: data.pos,
+    });
+    newPlayer.save((err, doc) => {
+      if (err) throw err;
+      console.log(doc);
+    });
+    playerAdded.status = true;
+    playerAdded.name = data.name;
+    res.redirect("/add");
+  } else {
+    res.render("password-incorrect");
+  }
 });
 router.get("/", (req, res) => {
   res.render("homepage");
